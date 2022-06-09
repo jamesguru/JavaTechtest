@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.stream.Stream;
-import java.util.Arrays;
-import java.util.Collections;
+
 
 class Main {
   public static void main(String[] args) {
@@ -66,43 +65,39 @@ class Main {
     int fairValueToEachWinners = sum/numberOfWinners;
 
     
-    System.out.println("Fair values of prize of winners:" + fairValueToEachWinners);
+    System.out.println("Total of fairest value each winner can get:" + fairValueToEachWinners);
 
 
-    //Printing the winner and value they get
-
-
-    for(int i =0; i < arrayNames.length; i++ ){
-
-        System.out.println(arrayNames[i] + " will get value of " +  fairValueToEachWinners);
-
-
-    }
+    
 
 
     // To get the values that are almost or equivalent to fair amount of prizes
 
-    // We need to sort the array and get values that are equivalent fair value to give the winners
-    
-  
-    Arrays.sort(intArrayValues);
     
 
 // Outer loop
     for(int i = 0; i < intArrayValues.length; i++){
 
-// Inner nested loop pointing 1 index ahead
-        for(int j = i+1; j < intArrayValues.length; j++){
+// Comparing prizes values to  get a pair of values that are equal to the fair value
+        for(int j = i; j < intArrayValues.length; j++){
 
-             if((intArrayValues[i] + intArrayValues[j]) == fairValueToEachWinners){
+             if((intArrayValues[i] + intArrayValues[j]) == fairValueToEachWinners && i!=j){
+
 
 
               
-              System.out.println(intArrayValues[i] + "," + intArrayValues[j]);
+             
 
+                System.out.println("Winner can get  " + intArrayValues[i] + "," + intArrayValues[j]);
 
-             }
+                System.out.println("or");
+        
+        
+            
 
+              
+            }
+             
         }
 
 
