@@ -78,7 +78,7 @@ class Main {
 // Outer loop
     for(int i = 0; i < intArrayValues.length; i++){
 
-// Comparing prizes values to  get a pair of values that are equal to the fair value
+// Comparing prizes values to  get a pair of values that sum to the fair value
         for(int j = i; j < intArrayValues.length; j++){
 
              if((intArrayValues[i] + intArrayValues[j]) == fairValueToEachWinners && i!=j){
