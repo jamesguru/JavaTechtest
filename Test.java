@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.ArrayList;  
 
 
 class Main {
@@ -74,34 +76,90 @@ class Main {
     // To get the values that are almost or equivalent to fair amount of prizes
 
     
+// Check if it will be the fair distribution
 
-// Outer loop
-    for(int i = 0; i < intArrayValues.length; i++){
+if(sum%numberOfWinners == 0){
+  
+  System.out.println("This is distribution is fair");
 
-// Comparing prizes values to  get a pair of values that sum to the fair value
-        for(int j = i; j < intArrayValues.length; j++){
+  // Outer loop
+  for(int i = 0; i < intArrayValues.length; i++){
 
-             if((intArrayValues[i] + intArrayValues[j]) == fairValueToEachWinners && i!=j){
-
-
-
-              
-             
-
-                System.out.println("Winner can get  " + intArrayValues[i] + "," + intArrayValues[j]);
-
-                System.out.println("or");
-        
-        
+    // Comparing prizes values to  get a pair of values that sum to the fair value
+            for(int j = i; j < intArrayValues.length; j++){
+    
+                 if((intArrayValues[i] + intArrayValues[j]) == fairValueToEachWinners && i!=j){
+    
+    
+    
+                  
+                 
+    
+                    System.out.println("Winner can get  " + intArrayValues[i] + "," + intArrayValues[j]);
+    
+                    System.out.println("or");
             
-
-              
+            
+                
+    
+                  
+                }
+                 
             }
-             
-        }
+    
+    
+       }
 
 
-   }
+
+
+
+}else{
+
+  System.out.println("This is distribution is not fair");
+  // If there is no fair distribution we will loop sort the array of values to be won then we will keep adding values to the winner with less values until the values end.
+
+  // sorting
+
+  Arrays.sort(intArrayValues);
+
+  int [][] winners = new int[][];
+
+  
+
+
+  ArrayList<Integer> arrayList = new ArrayList<Integer>(Arrays.asList(intArrayValues));
+
+  //Lets create the array of the winners and keep adding values to there arrays
+
+
+  for(int i =0; i< intArrayValues.length;i++){
+
+
+
+    for (int j = 0; j< arrayNames.length; j++){
+
+
+
+
+
+        winners[j][i] = intArrayValues[i];
+
+
+
+        arrayList.remove(i);
+
+}
+}
+
+}
+
+
+//print values
+
+
+
+
     
 // Big Oh notation will O(n)2 due to nested loop. 
 
